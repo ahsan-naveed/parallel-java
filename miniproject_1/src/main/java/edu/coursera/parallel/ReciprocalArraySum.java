@@ -187,6 +187,8 @@ public final class ReciprocalArraySum {
             tasks.add(new ReciprocalArraySumTask(startIndex, endIndex, input));
         }
 
+        // TODO: need to figure out a way to use `pool` instead of RecursiveAction API 
+        // to take advantage of real parallelism.
         RecursiveAction.invokeAll(tasks);
 
         for (ReciprocalArraySumTask t: tasks) {
